@@ -15,7 +15,6 @@ app.get('/', function (req, res) {
   var fileToSend = "index.html";
   //res.sendfile(fileToSend); // index is landing page
   res.sendfile(fileToSend, {root: './public'}); // Files inside "public" folder
-  res.send(html);
 })
 
 app.get('/rsvp', function(req, res){
@@ -34,7 +33,7 @@ app.get('/display', function(req, res){
     html = html + guests[i] + "<br>";
   }
   html = html + "</p></body></html>";
-
+  res.send(html);
 })
 
 app.listen(9000, function () {
