@@ -15,10 +15,10 @@ app.get('/', function (req, res) {
 })
 
 app.get('/rsvp', function(req, res){
-  console.log(req.query.textfield);
-  res.send(req.query.textfield);
+  console.log(req.query.name);
+  res.send(req.query.name);
   //res.send(req.body.optradio);
-  guests.push(req.query.textfield);
+  guests.push(req.query.name);
 
 })
 
