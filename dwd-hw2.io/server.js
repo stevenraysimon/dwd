@@ -21,9 +21,10 @@ app.get('/rsvp', function(req, res){
   //console.log(req.query.name);
   //res.send(req.query.name);
   var textvalue = req.query.name;
+  var radioOption = req.query.radio;
   res.send("You submitted: " + textvalue);
-  //res.send(req.body.optradio);
-  guests.push(req.query.name);
+  res.send("You picked:" + radioOption);
+  guests.push([textvalue, radioOption]);
 
 })
 
