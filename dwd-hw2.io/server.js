@@ -5,13 +5,17 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: true }); // for parsing form data
 app.use(urlencodedParser);
 
+app.use(express.static('public')) // To serve static files in public directory
+
 
 var guests = [];
 
 app.get('/', function (req, res) {
   //res.send('Hello World!')
   var fileToSend = "index.html";
-  res.sendfile(fileToSend); // Files inside "public" folder
+  //res.sendfile(fileToSend); // index is landing page
+  res.sendfile(fileToSend, {root: './public'}); // Files inside "public" folder
+});
 })
 
 app.get('/rsvp', function(req, res){
@@ -25,11 +29,11 @@ app.get('/rsvp', function(req, res){
 })
 
 app.get('/display', function(req, res){
-  var html = "<html><body>";
+  var html = "<html><body><p>";
   for (var i = 0; i < guests.length; i++){
     html = html + guests[i] + "<br>";
   }
-  html = html + "</body></html>";
+  html = html + "</p></body></html>";
   res.send(html);
 
 })
