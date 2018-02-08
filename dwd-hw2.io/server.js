@@ -15,7 +15,6 @@ app.get('/', function (req, res) {
   var fileToSend = "index.html";
   //res.sendfile(fileToSend); // index is landing page
   res.sendfile(fileToSend, {root: './public'}); // Files inside "public" folder
-});
 })
 
 app.get('/rsvp', function(req, res){
