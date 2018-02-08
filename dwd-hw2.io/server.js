@@ -28,8 +28,7 @@ app.get('/rsvp', function(req, res){
 })
 
 app.get('/display', function(req, res){
-  var html = '<body>
-    <div class="main_menu">
+  var html = '<html><body><div class="main_menu">
       <ul>
         <a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?eventType=Wedding&registryId=545383491" target="_blank" title="Wedding Registry" alt="https://www.bedbathandbeyond.com/"><li>Registry</li></a>
         <a href="#" id="dates" title="Dates" alt="https://www.bedbathandbeyond.com/"><li>Dates</li></a>
