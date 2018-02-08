@@ -28,11 +28,37 @@ app.get('/rsvp', function(req, res){
 })
 
 app.get('/display', function(req, res){
-  var html = "<html><body><p>";
+  var html = '<body>
+    <div class="main_menu">
+      <ul>
+        <a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?eventType=Wedding&registryId=545383491" target="_blank" title="Wedding Registry" alt="https://www.bedbathandbeyond.com/"><li>Registry</li></a>
+        <a href="#" id="dates" title="Dates" alt="https://www.bedbathandbeyond.com/"><li>Dates</li></a>
+        <a href="#" id="directions" title="Directions" alt="https://www.bedbathandbeyond.com/"><li>Directions</li></a>
+        <a href="#" id="about" title="About" alt="https://www.bedbathandbeyond.com/"><li>About</li></a>
+        <a href="#" id="rsvp" title="RSVP" alt="https://www.bedbathandbeyond.com/"><li>RSVP</li></a>
+      </ul>
+    </div>
+    <div class="blackCover">
+    </div>
+  <div class="wrapper">
+  <div class="wrap">
+      <div class="logo">
+          <div class="wrap-logo">
+              <a href="index.html">
+                <img class="logoImage" src="images/logo.png" alt="stephanie & josh" />
+            </a>
+          </div>
+     </div>
+  <a href="#" title="Menu">
+    <div class="menuButton" id="menuButton">
+      <div class="bar" id="barOne"></div>
+      <div class="bar" id="barTwo"></div>
+    </div>
+  </a><p class="lightPadTop">';
   for (var i = 0; i < guests.length; i++){
     html = html + guests[i] + "<br>";
   }
-  html = html + "</p></body></html>";
+  html = html + "</p></div></body></html>";
   res.send(html);
 })
 
