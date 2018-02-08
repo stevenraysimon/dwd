@@ -11,7 +11,7 @@ var guests = [];
 app.get('/', function (req, res) {
   //res.send('Hello World!')
   var fileToSend = "index.html";
-  res.sendfile(fileToSend, {root: './'}); // Files inside "public" folder
+  res.sendfile(fileToSend, {root: './public'}); // Files inside "public" folder
 })
 
 app.get('/rsvp', function(req, res){
