@@ -2,8 +2,8 @@ var express = require('express')
 var app = express()
 
 var bodyParser = require('body-parser');
-app.use(bodyParser.json()); // to support JSON bodies
-app.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded bodies
+var urlencodedParser = bodyParser.urlencoded({ extended: true }); // for parsing form data
+app.use(urlencodedParser);
 
 
 var guests = [];
@@ -15,8 +15,10 @@ app.get('/', function (req, res) {
 })
 
 app.get('/rsvp', function(req, res){
-  console.log(req.query.name);
-  res.send(req.query.name);
+  //console.log(req.query.name);
+  //res.send(req.query.name);
+  var textvalue = req.query.name;
+  res.send("You submitted: " + textvalue);
   //res.send(req.body.optradio);
   guests.push(req.query.name);
 
