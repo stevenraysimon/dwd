@@ -12,10 +12,50 @@
   <link href="https://fonts.googleapis.com/css?family=Life+Savers:700" rel="stylesheet">
   <!-- this line removes any default padding and style. you might only need one of these values set. -->
   <style> body {padding: 0; margin: 0; font-family:'Life Savers', cursive;}
+  #mainTitle{
+    font-family:'Life Savers', cursive;
+    font-size: 4.2em;
+    text-align: center;
+    margin-top: 160px;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    margin-bottom: 0px;
+  }
+  #subTitle{
+    font-family:'Life Savers', cursive;
+    font-size: 2.2em;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+  }
+  /* @media only screen and (max-width: 700px) {
+    #mainTitle{
+      font-family:'Life Savers', cursive;
+      font-size: 2em;
+      text-align: center;
+      margin-top: 160px;
+      position: absolute;
+      width: 100%;
+    }
+    #subTitle{
+      font-family:'Life Savers', cursive;
+      font-size: 1em;
+      text-align: center;
+      margin-top: 250px;
+      position: absolute;
+      width: 100%;
+    }
+
+  } */
   #startButton{
-    position: absolute;
+    position: relative;
     display: block;
-    margin:420px 40%;
+    left: 0;
+    right: 0;
+    margin:15px auto;
     width: 200px;
     height: 50px;
     padding-top: 10px;
@@ -25,6 +65,7 @@
     border-radius: 8px;
     font-size: 1.5em;
     text-align: center;
+    z-index: 10;
     }
   #startButton:hover{
     background-color: #F60;
@@ -38,21 +79,33 @@
     input{
       width: 400px;
       height: 40px;
-      position: absolute;
+      position: relative;
       display: block;
-      margin:350px 32%;
+      left: 0;
+      right: 0;
+      margin:0 auto;
       border-style: solid;
       border-color: black;
       font-family:'Life Savers', cursive;
       padding: 5px;
       font-size: 1.5em;
+      z-index: 10;
       }
       input::placeholder {
      font-family:'Life Savers', cursive;
+    }
+  canvas{
+    position: absolute;
+    display: block;
+    z-index: 0;
+    top: 0;
     }</style>
 </head>
 
 <body>
+  <h1 id="mainTitle">Welcome to the Balloon Game!</h1>
+  <h2 id="subTitle">Use the needle to pop balloons as they float through the air.<br>
+    The first player to pop 30 balloons wins!</h2>
   <input type="text" id="text_input" name="name" placeholder="Enter your name">
   <button id="startButton">Start</div>
 </body>

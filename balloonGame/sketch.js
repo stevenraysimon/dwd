@@ -107,15 +107,16 @@ function intro(){
   cloud(myClouds+300, 180, 20);
   cloud(myClouds+500, 300, 70);
   document.getElementById('startButton').style.display = "block";
-  //document.getElementById('text_input').value = '';
+  document.getElementById('mainTitle').style.display = "block";
+  document.getElementById('subTitle').style.display = "block";
   document.getElementById('text_input').style.display = "block";
-  fill(0);
-  textSize(84);
-  textAlign(CENTER);
-  text("Welcome to the Balloon Game!", canvasXsize/2, (canvasYsize/2)-100);
-  textSize(34);
-  text("Use the needle to pop balloons as they float through the air.", canvasXsize/2, (canvasYsize/2)-50);
-  text("The first player to pop 30 balloons wins!", canvasXsize/2, (canvasYsize/2)-0);
+  // fill(0);
+  // textSize(84);
+  // textAlign(CENTER);
+  // text("Welcome to the Balloon Game!", canvasXsize/2, (canvasYsize/2)-100);
+  // textSize(34);
+  // text("Use the needle to pop balloons as they float through the air.", canvasXsize/2, (canvasYsize/2)-50);
+  // text("The first player to pop 30 balloons wins!", canvasXsize/2, (canvasYsize/2)-0);
   document.getElementById('startButton').addEventListener("click", function(){
       if(document.getElementById('text_input').value == "")
       {
@@ -123,6 +124,8 @@ function intro(){
       } else{
       currentStatus = "game";
       document.getElementById('startButton').style.display = "none";
+      document.getElementById('mainTitle').style.display = "none";
+      document.getElementById('subTitle').style.display = "none";
       document.getElementById('text_input').style.display = "none";
       me = document.getElementById('text_input').value;
     }
