@@ -52,9 +52,12 @@ app.get('/display', function(req, res){
 
 //res.render('displays.ejs', {guests: guests});
 
-app.get('/list', function(req, res){
+app.post('/list', function(req, res){
+  var textvalue = req.body.name;
+  var radioOption = req.body.radio;
+  guests.push([textvalue, radioOption]);
   //guests.push([textvalue, radioOption]);
-  res.render('rsvp.ejs', {guests: guests[0]}); //First is the name from EJS page, the second is the data
+  res.render('rsvp.ejs', {guests: guests}); //First is the name from EJS page, the second is the data
 })
 
 app.listen(9000, function () {

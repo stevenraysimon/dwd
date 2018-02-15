@@ -43,10 +43,10 @@
   <div class="main_menu">
     <ul>
       <a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?eventType=Wedding&registryId=545383491" target="_blank" title="Wedding Registry" alt="https://www.bedbathandbeyond.com/"><li>Registry</li></a>
-      <a href="#" id="dates" title="Dates" alt="https://www.bedbathandbeyond.com/"><li>Dates</li></a>
-      <a href="#" id="directions" title="Directions" alt="https://www.bedbathandbeyond.com/"><li>Directions</li></a>
-      <a href="#" id="about" title="About" alt="https://www.bedbathandbeyond.com/"><li>About</li></a>
-      <a href="#" id="rsvp" title="RSVP" alt="https://www.bedbathandbeyond.com/"><li>RSVP</li></a>
+      <a href="index.html"  title="Dates" alt="https://www.bedbathandbeyond.com/"><li>Dates</li></a>
+      <a href="index.html"  title="Directions" alt="https://www.bedbathandbeyond.com/"><li>Directions</li></a>
+      <a href="index.html"  title="About" alt="https://www.bedbathandbeyond.com/"><li>About</li></a>
+      <a href="index.html" title="RSVP" alt="https://www.bedbathandbeyond.com/"><li>RSVP</li></a>
     </ul>
   </div>
   <div class="blackCover">
@@ -71,7 +71,9 @@
 <div class="row padTop">
   <div class="sixteen columns">
     <h1>Guest List</h1>
-    <p class="lightPadTop">
-      <%= guests %></p>
+    <p class="lightPadTop"><%= guests[0] %></p>
+    <% for(i=1; i< guests.length; i++){ %>
+    <p><%= guests[i] %></p>
+    <% } %>
   </div>
 </div>
