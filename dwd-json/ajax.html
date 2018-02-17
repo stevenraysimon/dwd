@@ -1,0 +1,53 @@
+<!-- api.openweathermap.org/data/2.5/
+weather?q= -->
+
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+    window.addEventListener('load', init);
+    function init(){
+      document.getElementById('weather').addEventListener('click', getWeatherClicked);
+
+    }
+
+    function getWeatherClicked(){
+        var request = new XMLHttpRequest();
+        request.addEventListener('load', ajaxLoaded);
+        function ajaxLoaded(){
+          var response = JSON.parse(this.responseText);
+
+          document.getElementById('result').innerHTML = response.main.temp;
+        }
+
+        request.open("GET", 
+
+
+    }
+
+
+
+    /************** jQuery way *****************/
+
+        // $('document').ready(function(){
+        //     $('#weather').click(function(){
+        //       $.ajax({
+        //           url: "http://api.openweathermap.org/data/2.5/weather?q=New%20York&appid=d21e79452f4461671f1ccf2a209d48c3&units=metric",
+        //           data: {},
+        //           success: function( result ) {
+        //             alert("NYC: " +result.main.temp);
+        //             $("#result").html("The temp is:"+ result.main.temp);
+        //           }
+        //       });//Ajax
+        //     });//Close weather click
+        //   });//Doc ready
+    </script>
+
+    </head>
+    <body>
+        <button id="weather">Get Weather</button>
+        <div id="result"></div>
+    </body>
+</html>
