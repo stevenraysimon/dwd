@@ -7,13 +7,7 @@ var config = require("./config.js");
 var mongojs = require('mongojs');
 
 var db = mongojs(config.username+":"+config.password+"@ds235788.mlab.com:35788/stephanie", ["Guests"]);
-//mongodb://config.username:config.password@ds235788.mlab.com:35788/stephanie
-//var db = mongojs("stevenraysimon:johnsonMAN2@ds229918.mlab.com:29918/dwd-stevenraysimon", ["Guests"]);
-//var db = mongojs('stevenraysimon:johnsonMAN2@ds229918.mlab.com:29918/dwd-stevenraysimon', ["Guests"]);
 
-
-// var db = mongojs("ds229918.mlab.com:29918/dwd-stevenraysimon")
-// var mycollection = db.collection('Guests')
 
 //This is for POST. Needs req.body.name
 var bodyParser = require('body-parser');
