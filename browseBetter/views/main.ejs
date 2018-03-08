@@ -1,0 +1,56 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/skeleton/skeleton.css" charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/skeleton/normalize.css" charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css" charset="utf-8"/>
+</head>
+	<body>
+		<div class="topRight">
+			<p class="id_text">Welcome <%= username %></p>
+			<a href="/logout">Logout</a>
+		</div>
+		<div class="row">
+      <div class="sixteen columns">
+        <img id="logo" src="images/logo.png" alt="BrowseBetter"/>
+        <h1 class="mainTitles">Unlock a Platform to Browse</h1>
+      </div>
+    </div>
+		<div class="miniWrapper">
+		<div class="row marginTop">
+			<div class="fourHalf columns cardPad">
+				<div class="card">
+					<div class="cardImg">
+						<img src="https://c1.staticflickr.com/3/2711/4200871650_c11d90acc6_z.jpg?zz=1" title="Academic"/>
+					</div>
+					<h2>Academic</h2>
+					<div class="cardButton">
+					<a href="/academicSurvey"><input class="cardButton_button" type="button" name="unlock" value="Unlock"></a>
+				</div>
+				</div>
+			</div>
+			<div class="fourHalf columns cardPad">
+				<div class="card">
+					<div class="cardImg">
+						<img src="https://media.npr.org/assets/img/2015/01/05/creditcards_wide-f5bd1aa47d9ff09cf90f6d299dfc0467c56aa3bf.jpg?s=1400" title="Banking"/>
+					</div>
+					<h2>Banking</h2>
+					<div class="cardButton">
+					<input class="cardButton_button" type="button" name="unlock" value="Unlock">
+				</div>
+				</div>
+			</div>
+			<div class="fourHalf columns cardPad">
+				<div class="card">
+					<div class="cardImg">
+						<img src="https://www.iii.org/sites/default/files/images/p_price_auto_policy_494087582.jpg" title="Insurance"/>
+					</div>
+					<h2>Insurance</h2>
+					<div class="cardButton">
+					<input class="cardButton_button" type="button" name="unlock" value="Unlock">
+				</div>
+				</div>
+			</div>
+		</div>
+	</div><!--Close miniWrapper-->
+	</body>
+</html>

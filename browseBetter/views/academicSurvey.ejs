@@ -1,0 +1,26 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/skeleton/skeleton.css" charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/skeleton/normalize.css" charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css" charset="utf-8"/>
+</head>
+	<body>
+		<div class="topRight">
+			<p class="id_text">Welcome <%= username %></p>
+			<a href="/logout">Logout</a>
+		</div>
+		<div class="row">
+      <div class="sixteen columns">
+        <img id="logo" src="images/logo.png" alt="BrowseBetter"/>
+        <h1 class="mainTitles">Set Up Your Academic Platform</h1>
+      </div>
+    </div>
+
+		<form action="/getScore" method="POST">
+			<input type="radio" id="r1" name="score" value="7"> 7
+  		<input type="radio" id="r2" name="score" value="22"> 22<br />
+			<input id="cta" type="submit" name="save" value="Save"><br />
+			<a href="/backToMain"><input class="little-marginTop" type="button" name="cancel" value="Cancel"></a>
+		</form>
+	</body>
+</html>
