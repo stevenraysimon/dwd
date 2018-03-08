@@ -31,6 +31,17 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: true }); // for parsing form data
 app.use(urlencodedParser);
 
+// npm install bcrypt-nodejs
+var bcrypt = require('bcrypt-nodejs');
+
+function generateHash(password) {
+	return bcrypt.hashSync(password);
+}
+
+function compareHash(password, hash) {
+    return bcrypt.compareSync(password, hash);
+}
+
 var allowedUsers = [
 	{"username": "vanevery", "password": "vanevery", "score": 0},
 	{"username": "root", "password": "password", "score": 0},
@@ -71,6 +82,12 @@ app.get('/academicSurvey', function(req, res){
   //res.send(academic_survey_complete);
 })
 
+//They clicked browse for academic
+app.get('/companies', function(req, res){
+  //Go to the companies page for universities
+	res.render('companies.ejs', req.session);
+})
+
 //They clicked create new account
 app.get('/backToMain', function(req, res){
 
@@ -103,7 +120,9 @@ app.get('/logout', function(req, res) {
 });
 
 app.post('/register', function(req, res){
+
     var userName = req.body.username;
+    var passwordHash = generateHash(req.body.password);
     var passWord = req.body.password;
     var theirScore = 0;
     allowedUsers.push({"username":userName, "password": passWord, "score": theirScore});
@@ -120,7 +139,6 @@ app.post('/getScore', function(req, res){
 
                     //Change the score
                     allowedUsers[i].score = req.body.score;
-
 
                     //Set the session to display the score change
                     req.session.score = allowedUsers[i].score;
@@ -142,13 +160,20 @@ app.post('/getScore', function(req, res){
 // Post from login page
 app.post('/login', function(req, res) {
 
+
 	// Check username and password in database
 	for (var i = 0; i < allowedUsers.length; i++) {
 		if (allowedUsers[i].username == req.body.username &&
-		    allowedUsers[i].password == req.body.password) {
+          allowedUsers[i].password == req.body.password) {
 
 					// Found user
 					var userRecord = allowedUsers[i];
+
+          // if (compareHash(req.body.password, userRecord.password)){
+          //   console.log("true");
+          // } else{
+          //   console.log("false");
+          // }
 
 					// Set the session variable
 					req.session.username = userRecord.username;
@@ -157,7 +182,6 @@ app.post('/login', function(req, res) {
 
 					// Put some other data in there
 					req.session.lastlogin = Date.now();
-
 
 					break;
 		}
